@@ -236,7 +236,7 @@ class SGEStats(object):
             if q.startswith('all.q@'):
                 single = self.queues.get(q).get('slots')
                 break
-        if (total != (single * len(self.hosts))):
+        if (total != (single * len(self.queues))):
             raise exception.BaseException(
                 "ERROR: Number of slots not consistent across cluster")
         return single
